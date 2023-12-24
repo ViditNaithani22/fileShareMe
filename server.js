@@ -49,12 +49,36 @@ app.get("/compress/:id",async (req,res)=>{
     await file.save();
     console.log(file.downloadCount);
     let nameSplit = file.path.split("uploads\\");
-    const compressedFile = `uploads/${nameSplit}.compressed`;
+    let fileName = nameSplit[1];
+    const compressedFile = `uploads/${fileName}.compressed`;
     compressFile(file.path, compressedFile);
     res.download(compressedFile, file.originalName);
 })
 
+app.post("/compress/:id",async (req,res)=>{
+    const file = await File.findById(req.params.id);
 
+    if(file.password != null){
+        if(req.body.password == null){
+            res.render("password");
+            return;
+        }
+
+        if(!(await bcrypt.compare(req.body.password, file.password))){
+            res.render("password", {error: true})
+            return;
+        }
+    }
+
+    file.downloadCount++;
+    await file.save();
+    console.log(file.downloadCount);
+    let nameSplit = file.path.split("uploads\\");
+    let fileName = nameSplit[1];
+    const compressedFile = `uploads/${fileName}.compressed`;
+    compressFile(file.path, compressedFile);
+    res.download(compressedFile, file.originalName);
+})
 
 
 app.get("/file/:id",async (req,res)=>{
