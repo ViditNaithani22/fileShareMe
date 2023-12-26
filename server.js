@@ -14,9 +14,13 @@ import bcrypt from 'bcrypt';
 
 import File from './models/File.js';
 
+import User from './models/User.js';
+
 const app = express();
 
 app.use(express.urlencoded({ extended: true}));
+
+app.use(express.static('public'));
 
 mongoose.connect(process.env.DATABASE_URL);
 
@@ -25,7 +29,7 @@ const upload = multer({ dest: "uploads"});
 app.set("view engine", "ejs");
 
 app.get("/", (req,res)=>{
-    res.render("index")
+    res.render("index");
 });
 
 
@@ -153,4 +157,25 @@ app.post("/upload", upload.single("file"),async (req,res)=>{
 });
 
 
+
+app.post("/signup", async (req,res)=>{
+
+    const userData = {
+        username: req.body.username,
+        email: req.body.email
+    }
+
+    if(req.body.password != null && req.body.password !== ""){
+        userData.password = await bcrypt.hash(req.body.password, 10)
+    }
+
+    const user = await User.create(userData);
+    
+    console.log(user);
+    res.render("index", {register: `${req.body.username}`});
+
+});
+
+
 app.listen(process.env.PORT);
+

@@ -1,0 +1,82 @@
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+sudo yum -y install terraform
+
+
+
+
+
+mongodb atlas user
+username: viditnaithani22
+password: 889FqBNNmTppIEdI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is the model of your first vehicle?
+beat
+
+Password: Kronos@1998  Vidit$3333
+
+User: viditnaithani
+
+7425
+7245
+
+
+creating unnecessary or deep inheritance hierarchies
+
+
+
+1) we have a queue of n integers, called 'theArray', carrying integers from 1 to n.
+2) we need sum of first n integers, for this we need to add all the integers present in 'theArray'. 
+3) the only way to do this is to use sumOfAll() method, as we can't access theArray directly, it is private.
+4) sumOfAll() takes out first two integers from the queue, adds them, then attach the result at the end of the queue.
+5) but it takes 1 sec to do the above mentioned process
+6) it keeps doing this until there is only one integer left in the queue, which is the sum of all integers.
+7) Therefore if there are n integers in theArray then the sumOfAll() method will take n-1 secs because it takes 1 sec to add every two integers. 
+8) so if there are 1000 integers in theArray(), sumOfAll() will take 999 secs, which is very slow and time consuming.
+9) to make this faster, we use 10 threads, to call sumOfAll() method 10 times simultaniously. 
+10) So instead of doing one addition every second, we will be doing 10 additions every sec.
+11) 10 threads will be doing the job of a single thread.
+
+1605
+ 
+
+
+
+
+
+1) select 100 tourist places subreddit.
+2) for any place => % of positive posts, % of negetive posts
+3) What are the most common things/nouns (key words) these positive posts talking about. List them to user.
+4) What are the most common things/nouns these negetive posts talking about. List them to user. 
+5) clicking on a keyword will fetch posts that have that keyword.
+6) Recommend other places whose positive reviews contain a similar set of keywords.  
+7) update the entire snetiment analysis periodically, so that the user will always see the current status or the current issues of the tourist place.
+
+
+
+
+
+
+
+
+
+
+
+
+
