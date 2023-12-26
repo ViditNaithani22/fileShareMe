@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
+    
     <% if(locals.fileLink != null) {%>
            <div style="margin-bottom: 1rem;">
             <a href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
            </div>
     <% } %>
-    <% if(locals.compressLink !=null) {%>
+    <% if(locals.compressLink != null) {%>
         <div style="margin-bottom: 1rem;">
             <a href="<%= locals.compressLink %>">
                 <%= locals.compressLink %>
@@ -24,7 +25,103 @@
         <input id="file" name="file" type="file" required />
         <label for="password">Password:</label>
         <input id="password" name="password" type="password" />
+        <% if(locals.user != null) {%>
         <button type="submit" style="grid-column: span 2;">Share</button>
+        <% }%>
     </form>
+    <% if(locals.user==null) {%>
+        <div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; max-width: 500px; margin: 0 auto;">
+        <button id="share" style="grid-column: span 2; margin-top: 6px;">Share</button>
+        </div>
+    <% }%>
+
+    <% if(locals.user == null){ %>
+        <br>
+        <br>
+        <br>
+        <div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; max-width: 500px; margin: 0 auto;">
+        <h3> You are not Loged in. Please Login to upload your files </h3>
+        <button style="grid-column: span 2;" id="login">Login</button>
+        <h3> Please register if you are new here </h3>
+        <button style="grid-column: span 2;" id="signup">Sign-Up</button>
+        </div>
+    <% } %>
+
+    <% if(locals.register != null){%>
+        <div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; max-width: 500px; margin: 0 auto;">
+        <h3 style="color: blueviolet;"> (Your account has been created. please login to upload files) </h3>
+        </div>
+    <% } %>    
+
+    <div class="popup">
+        <div class="popup-content">
+            <form action="/login" method="post">
+                <H3>Login</H3>
+                <img src="close.jpg" class="close">
+                <input class="popup-input" id="username" name="username" type="text" placeholder="username" required />
+                <input class="popup-input" id="password" name="password" type="password" placeholder="password" required />
+                <button type="submit">Login</button>
+                <br>
+                <br>
+                <button id="signup2">Are you new here? Sign-Up</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup2">
+        <div class="popup-content2">
+            <form action="/signup" method="post">
+                <H3>Sign-Up</H3>
+                <img src="close.jpg" class="close2">
+                <input class="popup-input" id="username" name="username" type="text" placeholder="username" required />
+                <input class="popup-input" id="password" name="password" type="password" placeholder="password" required />
+                <input class="popup-input" id="email" name="email" type="email" placeholder="email" required />
+                <button type="submit">Sign-Up</button>
+                <br>
+                <br>
+                <button id="login2">Have an account? Login</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script>
+         
+         document.getElementById("login").addEventListener("click", function(){
+            document.querySelector(".popup").style.display = "flex";
+            document.querySelector(".popup2").style.display = "none";
+         });
+
+         document.getElementById("signup").addEventListener("click", function () {
+                document.querySelector(".popup2").style.display = "flex";
+                document.querySelector(".popup").style.display = "none";
+            });
+
+            document.getElementById("login2").addEventListener("click", function () {
+                    document.querySelector(".popup").style.display = "flex";
+                    document.querySelector(".popup2").style.display = "none";
+                });
+
+                document.getElementById("signup2").addEventListener("click", function () {
+                        document.querySelector(".popup2").style.display = "flex";
+                        document.querySelector(".popup").style.display = "none";
+                    });
+
+                   document.querySelector(".close").addEventListener("click", function(){
+                            document.querySelector(".popup").style.display = "none";
+                   });
+                   
+                    document.querySelector(".close2").addEventListener("click", function () {
+                        document.querySelector(".popup2").style.display = "none";
+                    });
+
+            document.getElementById("share").addEventListener("click", function () {
+                    document.querySelector(".popup").style.display = "flex";
+                    document.querySelector(".popup2").style.display = "none";
+                });
+
+    </script>
+
 </body>
 </html>
