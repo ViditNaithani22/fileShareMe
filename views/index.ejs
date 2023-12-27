@@ -7,18 +7,15 @@
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    
-    <% if(locals.fileLink != null) {%>
-           <div style="margin-bottom: 1rem;">
-            <a href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
-           </div>
-    <% } %>
-    <% if(locals.compressLink != null) {%>
-        <div style="margin-bottom: 1rem;">
-            <a href="<%= locals.compressLink %>">
-                <%= locals.compressLink %>
-            </a>
-        </div>
+
+
+    <% if(locals.user != null){ %>
+        <h3>Hello <%= locals.user %></h3>
+    <% } %>    
+    <% if(locals.user !=null){ %>
+        <form action="/logout?_method=DELETE" method="post">
+            <button type="submit">Logout</button>
+        </form>
     <% } %>
     <form action="/upload" method="post" enctype="multipart/form-data" style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; max-width: 500px; margin: 0 auto;">
         <label for="file">File:</label>
@@ -35,6 +32,15 @@
         </div>
     <% }%>
 
+    <% if(locals.links!=null) { %>
+    <ul>
+        <% links.forEach(link=> { %>
+            <li><a href="<%= link %>">
+                    <%= link %>
+                </a></li>
+            <% }); %>
+    </ul>
+    <% } %>
     <% if(locals.user == null){ %>
         <br>
         <br>
@@ -57,14 +63,17 @@
         <div class="popup-content">
             <form action="/login" method="post">
                 <H3>Login</H3>
+                <% if(messages.error){ %>
+                    <%= messages.error %>   
+                <% } %>    
                 <img src="close.jpg" class="close">
-                <input class="popup-input" id="username" name="username" type="text" placeholder="username" required />
+                <input class="popup-input" id="email" name="email" type="email" placeholder="email" required />
                 <input class="popup-input" id="password" name="password" type="password" placeholder="password" required />
                 <button type="submit">Login</button>
                 <br>
                 <br>
-                <button id="signup2">Are you new here? Sign-Up</button>
             </form>
+            <button id="signup2">Are you new here? Sign-Up</button>
         </div>
     </div>
 
@@ -79,12 +88,12 @@
                 <button type="submit">Sign-Up</button>
                 <br>
                 <br>
-                <button id="login2">Have an account? Login</button>
             </form>
+            <button id="login2">Have an account? Login</button>
         </div>
     </div>
 
-
+      <% var lg = locals.loginFail %>
 
     <script>
          
@@ -120,6 +129,13 @@
                     document.querySelector(".popup").style.display = "flex";
                     document.querySelector(".popup2").style.display = "none";
                 });
+
+                var loginStatus = "<%= lg %>";
+
+                if(loginStatus == "true"){
+                    document.querySelector(".popup").style.display = "flex";
+                    document.querySelector(".popup2").style.display = "none";
+                }
 
     </script>
 

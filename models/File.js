@@ -13,7 +13,8 @@ const FileSchema = new mongoose.Schema({
         type: Number,
         required: true,
         default: 0
-    }  
+    },  
+    username: String,
 });
 
 const File = mongoose.model('File', FileSchema);
