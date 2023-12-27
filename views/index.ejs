@@ -32,15 +32,31 @@
         </div>
     <% }%>
 
-    <% if(locals.links!=null) { %>
-    <ul>
-        <% links.forEach(link=> { %>
-            <li><a href="<%= link %>">
-                    <%= link %>
-                </a></li>
-            <% }); %>
-    </ul>
-    <% } %>
+    <% if (locals.links !=null) { %>
+        <ul>
+            <% links.forEach(link=> { %>
+                <li>
+                    <a href="<%= link %>">
+                        <%= link %>
+                    </a>
+                    <% if (link.includes("/file/")) { %>
+                    <form method="POST" action="/file/<%= extractFileId(link) %>?_method=DELETE"
+                        style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                    <% } else{ %>
+                        <form method="POST" action="/compress/<%= extractFileId(link) %>?_method=DELETE" style="display:inline;">
+                            <button type="submit">Delete</button>
+                        </form>
+                    <% } %>    
+                </li>
+                <% }); %>
+        </ul>
+        <% } %>
+    
+        <% function extractFileId(link) { const parts=link.split('/'); return parts[parts.length - 1]; } %>
+
+
     <% if(locals.user == null){ %>
         <br>
         <br>
