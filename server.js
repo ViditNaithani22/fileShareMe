@@ -28,6 +28,10 @@ import flash from 'express-flash';
 
 import methodOverride from 'method-override';
 
+import { promises as fsPromises } from 'fs';
+
+import path from 'path';
+
 const app = express();
 
 app.use(express.urlencoded({ extended: true}));
@@ -275,6 +279,60 @@ app.delete('/logout', (req, res) => {
     });
 });
 
+
+app.delete('/file/:id', async (req, res) => {
+    try {
+        const fileId = req.params.id;
+        const file = await File.findById(fileId);
+
+        // Check if the file exists
+        if (!file) {
+            return res.status(404).send('File not found');
+        }
+
+        // Check if the user is the owner of the file
+        if (file.username !== req.user.username) {
+            return res.status(403).send('Unauthorized');
+        }
+
+        await fsPromises.unlink(file.path);
+
+        // Delete the file from the database
+        await File.findByIdAndDelete(fileId);
+
+        // Remove the file link from the user's "links" array
+        await User.updateOne(
+            { _id: req.user._id },
+            { $pull: { links: `${req.headers.origin}/file/${fileId}` } }
+        );
+
+        console.log('File deleted');
+        res.redirect('/');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+
+
+app.delete('/compress/:id', async (req, res) => {
+    try {
+        const fileId = req.params.id;
+
+        // Remove the file link from the user's "links" array
+        await User.updateOne(
+            { _id: req.user._id },
+            { $pull: { links: `${req.headers.origin}/compress/${fileId}` } }
+        );
+
+        console.log('File deleted');
+        res.redirect('/');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
 
 app.listen(process.env.PORT);
 
