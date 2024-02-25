@@ -6,4 +6,4 @@
 <h4>🍁The website was made using Node.js and Express.js. The database used is MongoDB. And it is hosted on AWS EC2 using PM2</h4>
 <h4>🍁Website link: http://52.23.208.55:80</h4>
 <br>
-<h3> How it works </h3>
+<h2> How it works </h2>
