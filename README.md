@@ -27,4 +27,4 @@
 <br>
 <p>The server.js file contains all the express methods to handle all the server side logic. The index.js file carries the home page which user sees upon visiting the website.</p>
 <p>Since we have "type": "module" in our package.json, we can't use require() method to import express package or any other package in the server.js file (eg: const express = require("express") ). We need to use import statements like: import express from 'express'; </p>
-
+<p>Once we have imported express, we can use express() method to get an object which has various useful methods like get(),set(),post(), etc. We store this object in app: const app = express();</p>
