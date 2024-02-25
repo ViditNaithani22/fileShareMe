@@ -7,3 +7,15 @@
 <h4>🍁Website link: http://52.23.208.55:80</h4>
 <br>
 <h2> How it works </h2>
+
+<h4>First we create a Node.js environment by installing the following packages:</h4>
+<h4>🍁 Express: it handles routing and server side logic, allows us to create methods that analyze the user's request and respond to them accordingly</h4>
+<h4>🍁 mongoose: helps us to access our MongoDB database</h4>
+<h4>🍁 multer: helps us to create the functionality of uploading, saving and downloading files</h4>
+<h4>🍁 ejs: instead of using html we will use ejs as we will be using various if-conditions inside our html code</h4>
+<h4>🍁 bcrypt: used for crypting passwords before storing them in our database</h4>
+<h4>🍁 dotenv: to store multiple environment variables like server port and database url</h4>
+<h4>🍁 nodemon: automatically refresh our server everytime we make changes</h4>
+
+
+
