@@ -26,4 +26,5 @@
 <h4>To run the server we just write "npm run devStart" in the terminal</h4>
 <br>
 <p>The server.js file contains all the express methods to handle all the server side logic. The index.js file carries the home page which user sees upon visiting the website.</p>
+<p>Since we have "type": "module" in our package.json, we can't use require() method to import express package or any other package in the server.js file (eg: const express = require("express") ). We need to use import statements like: import express from 'express'; </p>
 
