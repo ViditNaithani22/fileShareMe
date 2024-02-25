@@ -16,6 +16,11 @@
 <h4>🍁 bcrypt: used for crypting passwords before storing them in our database</h4>
 <h4>🍁 dotenv: to store multiple environment variables like server port and database url</h4>
 <h4>🍁 nodemon: automatically refresh our server everytime we make changes</h4>
+<br>
+<h4>Open the terminal inside the folder of your project and run the following commands in the terminal to create this environemt:</h4>
+<h4>npm init -y (starts the default node environment and creates package.json file)</h4>
+<h4>npm i express mongoose multer ejs bcrypt dotenv (installs all the above mentioned packages and updates the "dependencies" section of the package.json file)</h4>
+<h4>npm i --save-dev nodemon (installs nodemon)</h4>
 
 
 
