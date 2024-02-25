@@ -23,4 +23,5 @@
 <h4>npm i --save-dev nodemon (installs nodemon)</h4>
 <img width="396" alt="Screenshot 2024-02-25 145504" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/91143fb0-ee06-470d-aeea-0530ec8b45c3">
 <h4>Inside package.json file, in the "scripts" section we add: "devStart": "nodemon server.js", this tells nodemon to restart the server as soon as we update the server.js file </h4>
+<h4>To run the server we just write "npm run devStart" in the terminal</h4>
 
