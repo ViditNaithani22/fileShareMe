@@ -37,4 +37,6 @@
 <img width="347" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/2a7a08f2-8555-4e1b-b6ff-94aca1bc01e9"> 
 <p>inside the server.js file, we call multer() method, provided by the multer library, and in the argument we specify the folder name "uploads" where we save all of our uploaded files. This returns an object which we then store in a variable called upload. Now we can use various methods provided in the multer library using this object whenever we want to upload a file in the uploads folder.</p>
 <img width="458" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/a93a6484-cca4-4531-b624-bfad93a04db6">
-<p>in the image above, we use upload.single("file") method to tell that we want to upload a single file at a time.</p>
+<p>In the image above, we use upload.single("file") method to tell that we want to upload a single file at a time. Once this post method is called, inside the uploads folder we will see a new file saved with a randomly generated unique name.</p>
+<img width="203" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/0f6a28a8-2ed9-4797-83da-2a24e49e52c7">
+
