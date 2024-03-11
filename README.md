@@ -39,4 +39,11 @@
 <img width="458" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/a93a6484-cca4-4531-b624-bfad93a04db6">
 <p>In the image above, we use upload.single("file") method to tell that we want to upload a single file at a time. Once this post method is called, inside the uploads folder we will see a new file saved with a randomly generated unique name.</p>
 <img height="80" width="303" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/0f6a28a8-2ed9-4797-83da-2a24e49e52c7">
-
+<h4>How to set up port to access the mongodb database and the server output</h4>
+<p>We will store the url/port of our mongodb database and server in the dotenv file. To access variables defined in the dotenv file in our server.js file, we need to first import the dotenv library and then call its config() method</p>
+<img width="209" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/e6ec4080-7fbf-48e7-b45e-7b3fa60853a0">
+<p>Then we use mongoose's connect method to connect to our mongodb database, and we use app.listen() method to specify the port to display the server output</p>
+<img width="209" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/36e0dab3-cdd3-49d5-a179-0bc0724f1e5d">
+<img width="311" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/60e47be4-d3ad-4e57-8444-968326d1f0c5">
+<p>The variables mentioned as the arguments to these methods are defined in our .env file, which is then made private for security reasons</p>
+<img width="392" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/7321717a-b649-4dfb-a6c9-97a4842a417e">
