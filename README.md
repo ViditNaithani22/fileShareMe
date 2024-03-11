@@ -33,3 +33,8 @@
 <img width="472" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/359cfba0-ba02-4868-a2ac-518dd089fe77">
 <p>A method in server.js refrencing password input by using it's name value which is 'password'</p>
 <img width="500" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/e361abc6-4242-43e5-beae-8aa8cb0bd87f">
+<h4>How to upload files?</h4>
+<img width="347" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/2a7a08f2-8555-4e1b-b6ff-94aca1bc01e9"> 
+<p>inside the server.js file, we call multer() method, provided by the multer library, and in the argument we specify the folder name "uploads" where we save all of our uploaded files. This returns an object which we then store in a variable called upload. Now we can use various methods provided in the multer library using this object whenever we want to upload a file in the uploads folder.</p>
+<img width="458" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/a93a6484-cca4-4531-b624-bfad93a04db6">
+<p>in the image above, we use upload.single("file") method to tell that we want to upload a single file at a time.</p>
