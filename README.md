@@ -47,3 +47,20 @@
 <img width="311" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/60e47be4-d3ad-4e57-8444-968326d1f0c5">
 <p>The variables mentioned as the arguments to these methods are defined in our .env file, which is then made private for security reasons</p>
 <img width="392" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/7321717a-b649-4dfb-a6c9-97a4842a417e">
+
+<h3>How to host this website on an AWS EC2 instance with the help of PM2</h3>
+<h4>Step1: select EC2 on your AWS console and open EC2 dashboard. Then click on 'Instances' and then click on 'launch instances'</h4>
+<h4>Step2: give name to your EC2 instance, select OS as Amazon Linux, select Instance type as t2.micro, select your login key pair, and leave network settings as default</h4>
+<h4>Step3: Now go to Instances section, select your EC2 instance and then click on connect button on the top</h4>
+<img width="948" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/bf99d7c3-004c-412d-9813-4263670521d0">
+<h4>Step4: Select 'EC2 Instance Connect' and then click on 'Connect'. After clicking Connect you will see a terminal window opening</h4>
+<img width="410" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/a0b23a82-8a1a-45a9-bd34-5ab9384bb2c8">
+<h4>Step5: Switch to root user using: sudo su - and update the system using: yum update -y </h4>
+<img width="432" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/92287ac1-0062-47ab-8fbd-2436c838c82c">
+
+
+
+
+
+
+
