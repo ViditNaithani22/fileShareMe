@@ -85,8 +85,6 @@
 <img width="632" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/a4e6e313-503e-4123-ba74-22d6aa623852">
 <h4>Step17: to stop the application type: pm2 stop 0 (where 0 is the index of the running application) and to restart the same application: pm2 restart 0</h4>
 <img width="619" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/e08b033a-8bb4-4999-99db-b678f9f32e57">
-<h4>Step18: make sure that your application keeps running even if you close the terminal. first stop the pm2. then type: pm2 start server.js --name my-app --watch (my-app is the name of this instance) this command will run the pm2 application in detached mode</h4>
-<img width="626" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/4dbd7ef0-e274-4029-833b-93c4be84b3ea">
 
 
 
