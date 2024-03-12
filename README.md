@@ -48,7 +48,7 @@
 <p>The variables mentioned as the arguments to these methods are defined in our .env file, which is then made private for security reasons</p>
 <img width="392" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/7321717a-b649-4dfb-a6c9-97a4842a417e">
 
-<h3>How to host this website on an AWS EC2 instance with the help of PM2</h3>
+<h3>How to host this node.js website on an AWS EC2 instance with the help of PM2</h3>
 <h4>Step1: select EC2 on your AWS console and open EC2 dashboard. Then click on 'Instances' and then click on 'launch instances'</h4>
 <h4>Step2: give name to your EC2 instance, select OS as Amazon Linux, select Instance type as t2.micro, select your login key pair, and leave network settings as default</h4>
 <h4>Step3: Now go to Instances section, select your EC2 instance and then click on connect button on the top</h4>
@@ -57,6 +57,37 @@
 <img width="410" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/a0b23a82-8a1a-45a9-bd34-5ab9384bb2c8">
 <h4>Step5: Switch to root user using: sudo su - and update the system using: yum update -y </h4>
 <img width="432" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/92287ac1-0062-47ab-8fbd-2436c838c82c">
+<h4>Step6: install nvm : curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash  and activate nvm: . ~/.nvm/nvm.sh </h4>
+<img width="481" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/24366ee2-05ad-4d60-b02d-4624fa26872b">
+<h4>Step7: install node using nvm</h4>
+<img width="374" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/8c99f023-bfb4-45a2-a306-33a76275a3e4">
+<h4>Step8: first update the system using: yum update -y and then install git: yum install git -y</h4>
+<img width="337" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/53271a62-d131-4419-949e-82732cc65085">
+<h4>Step9: clone this repository</h4>
+<img width="384" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/91b5162f-d69f-4c81-bf3f-187fcf7b77b7">
+<h4>Step10: check the cloned folder: ls -lrt then open the cloned folder: cd fileShareMe then check all the files inside the folder: ls -lrt</h4>
+<img width="288" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/f6b74420-eca2-430f-9e55-4bdc4ea36604">
+<h4>Step11: try running: npm start if you see the below mentioned error, then first delete all the modules by running: rm -rf node_modules and then install all the modules again by running: npm install</h4>
+<img width="455" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/c7a223c9-9f71-4bf9-bd3d-4c2edb544be4">
+<img width="570" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/82b1bcd5-3190-4d3b-a7a8-4ea70f7b855e">
+<h4>Step12: now go back to your Instances section of your AWS EC2, then select your EC2 instance, then select the Security section and then click on the link of the Security groups</h4>
+<img width="679" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/64d5ec7b-fed7-4d21-8f69-f6a6f14aef46">
+<h4>Step13: make sure you have these three inbound rules, if you don't then add them</h4>
+<img width="779" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/32ff7ff8-bade-42e0-a0f4-c4dae09e8e57">
+<h4>Step14: now go back to your Instances section of your AWS EC2, then select your EC2 instance, and copy the Public IPv4 address of your EC2. open a new tab, paste this ip address and add ':80' at the end of this address, also make sure you use 'http' and not 'https'</h4>
+<img width="608" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/91a2abf9-bf8d-4e73-9a5b-81ae0daeb0c7">
+<img width="476" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/3d8cd025-e148-4628-8c4d-f30bd10b374d">
+<h4>After all this you will see the website up and running but now we also need to make sure that it keeps running even when we close our EC2 terminal. For that follow the next few steps to use PM2</h4>
+<img width="602" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/8d9cefe5-14c0-4e34-abf1-4a202502ca74">
+<h4>Step15: install PM2: npm install pm2 -g (but first close the running website by: ctrl+c)</h4>
+<img width="329" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/e50e7ceb-f971-414d-8028-0204d28ee994">
+<h4>Step16: host website using PM2. Type: pm2 start server.js</h4>
+<img width="632" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/a4e6e313-503e-4123-ba74-22d6aa623852">
+<h4>Step17: to stop the application type: pm2 stop 0 (where 0 is the index of the running application) and to restart the same application: pm2 restart 0</h4>
+<img width="619" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/e08b033a-8bb4-4999-99db-b678f9f32e57">
+<h4>Step18: make sure that your application keeps running even if you close the terminal. first stop the pm2. then type: pm2 start server.js --name my-app --watch (my-app is the name of this instance) this command will run the pm2 application in detached mode</h4>
+<img width="626" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/4dbd7ef0-e274-4029-833b-93c4be84b3ea">
+
 
 
 
