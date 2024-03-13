@@ -6,6 +6,19 @@
 <h4>🍁The website was made using Node.js and Express.js. The database used is MongoDB. And it is hosted on AWS EC2 using PM2</h4>
 <h4>🍁Website link: http://107.23.159.118:80</h4>
 <br>
+<h2>User Guide</h2>
+<h4>Visit the website from this link: http://107.23.159.118:80</h4>
+<h4>This is the home screen when you are not logged in</h4>
+<img width="960" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/f7075a6a-d432-43a2-851d-c48a992a7402">
+<h4>If you try to upload a file when you are not logged in, then you will be asked to login first</h4>
+<img width="881" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/3bcbefcb-c1c8-4855-8105-453562df75dc">
+<h4> If you don't have an account then click on Sign-Up to create your account</h4>
+<img width="859" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/7e14db4f-fecf-4de1-810b-06babc6b5524">
+<h4>Once you login, you will see your home screen. Now you can upload your files. As soon as you upload a file it will generate a link, which you can share with your friends. Using this link your friends can download your file. If your upload a .txt file, then two links will be generated. the first one will be to download the original file and the second one will be to download the compressed version of this file. The .txt files are compressed using the Huffman file compression algorithm. There is also a delete button beside every generated link, which you can use to delete your files.</h4>
+<img width="888" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/85563853-8313-4bfc-9546-a9881d7417f5">
+<h4>If you put a password for your file, then your friends will be directed to a password protection page, where they will be asked to enter your file's password to download it.</h4>
+<img width="868" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/b999d3cc-83e7-4afa-9441-1f46d4047f54">
+<br>
 <h2> How it works </h2>
 
 <h4>First we create a Node.js environment by installing the following packages:</h4>
@@ -47,7 +60,7 @@
 <img width="311" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/60e47be4-d3ad-4e57-8444-968326d1f0c5">
 <p>The variables mentioned as the arguments to these methods are defined in our .env file, which is then made private for security reasons</p>
 <img width="392" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/7321717a-b649-4dfb-a6c9-97a4842a417e">
-
+<br>
 <h2>How to host this node.js website on an AWS EC2 instance with the help of PM2</h2>
 <h4>Step1: select EC2 on your AWS console and open EC2 dashboard. Then click on 'Instances' and then click on 'launch instances'</h4>
 <h4>Step2: give name to your EC2 instance, select OS as Amazon Linux, select Instance type as t2.micro, select your login key pair, and leave network settings as default</h4>
