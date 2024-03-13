@@ -48,7 +48,7 @@
 <p>The variables mentioned as the arguments to these methods are defined in our .env file, which is then made private for security reasons</p>
 <img width="392" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/7321717a-b649-4dfb-a6c9-97a4842a417e">
 
-<h3>How to host this node.js website on an AWS EC2 instance with the help of PM2</h3>
+<h2>How to host this node.js website on an AWS EC2 instance with the help of PM2</h2>
 <h4>Step1: select EC2 on your AWS console and open EC2 dashboard. Then click on 'Instances' and then click on 'launch instances'</h4>
 <h4>Step2: give name to your EC2 instance, select OS as Amazon Linux, select Instance type as t2.micro, select your login key pair, and leave network settings as default</h4>
 <h4>Step3: Now go to Instances section, select your EC2 instance and then click on connect button on the top</h4>
