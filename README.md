@@ -60,12 +60,20 @@
 <img width="311" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/60e47be4-d3ad-4e57-8444-968326d1f0c5">
 <p>The variables mentioned as the arguments to these methods are defined in our .env file, which is then made private for security reasons</p>
 <img width="392" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/7321717a-b649-4dfb-a6c9-97a4842a417e">
+<p>Inside 'models' folder we store the entities that we need to store in our database. In this project we need to store the information about our users and the information about the files uploaded by them. Therefore we have two .js files in our models folder File.js and User.js</p>
+<img width="128" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/463a9728-649a-42d3-b3cf-9dfff31eacb0">
+<p>Inside File.js we import mongoose library, as we need to use it's method to store a file's data in our mongoDB database. We use mongoose.Schema() method, which returns an instance of the Schema class. In this method we pass an object as an argument, where we define the properties or attributes of this File entity which we need to store. So the instance returned by mongoose.Schema() is our table and the attributes defined inside the the object we pass as an argument are the columns of that table. These attributs are variables of type String, Int, Float, Boolean, etc. Then we pass this Schema instance as an argument to another mongoose method mongoose.model('File', FileSchema), where the first argument is the name with which we want to address this instance in our database. This method returns a model class, which we store in a variable, and then we export this variable, so that we can create instances of this model class using this variable in other .js files such as server.js</p>
+<p>For a File we will store its original name, its path to the uploads folder, its password (if any), its download count, and the user's name who uploaded the file</p>
+<img width="416" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/f6d61637-f263-4ce3-87ff-7d7e92da7786">
+<p>For a User we will store username, password, email, links to download the files uploaded by the user, and the number of files uploaded by the user</p>
+<img width="410" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/e6f48e72-755e-4d93-8ad2-e72c46479597">
+<br>
 <br>
 <h2>How to host this node.js website on an AWS EC2 instance with the help of PM2</h2>
 <h4>Step1: select EC2 on your AWS console and open EC2 dashboard. Then click on 'Instances' and then click on 'launch instances'</h4>
 <h4>Step2: give name to your EC2 instance, select OS as Amazon Linux, select Instance type as t2.micro, select your login key pair, and leave network settings as default</h4>
 <h4>Step3: Now go to Instances section, select your EC2 instance and then click on connect button on the top</h4>
-<img width="948" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/bf99d7c3-004c-412d-9813-4263670521d0">
+<img width="948" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/bf99d7c3-004c-412d-9813-4263670521d0"> 
 <h4>Step4: Select 'EC2 Instance Connect' and then click on 'Connect'. After clicking Connect you will see a terminal window opening</h4>
 <img width="410" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/a0b23a82-8a1a-45a9-bd34-5ab9384bb2c8">
 <h4>Step5: Switch to root user using: sudo su - and update the system using: yum update -y </h4>
