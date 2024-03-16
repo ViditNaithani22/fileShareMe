@@ -67,6 +67,10 @@
 <img width="416" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/f6d61637-f263-4ce3-87ff-7d7e92da7786">
 <p>For a User we will store username, password, email, links to download the files uploaded by the user, and the number of files uploaded by the user</p>
 <img width="410" alt="image" src="https://github.com/ViditNaithani22/fileShareMe/assets/102232954/e6f48e72-755e-4d93-8ad2-e72c46479597">
+<p>Note: We are using these two lines: const File = mongoose.model('File', FileSchema); export default File; because we have "type": "module" in our package.json file, otherwise we could have simply used module.exports = mongoose.model('File', FileSchema); </p>
+<p>To use the exported File class in our server.js we use the line: import File from './models/File.js'; instead of const File = require("./models/File.js") because we have "type": "module" in our package.json file</p>
+<p>The following is the express post method that we use to submit the form data to upload a file:</p>
+
 <br>
 <br>
 <h2>How to host this node.js website on an AWS EC2 instance with the help of PM2</h2>
